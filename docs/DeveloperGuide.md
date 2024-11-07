@@ -1,7 +1,7 @@
 ---
   layout: default.md
-  title: "Developer Guide"
-  pageNav: 3
+    title: "Developer Guide"
+    pageNav: 3
 ---
 
 # TutorEase Developer Guide
@@ -22,6 +22,7 @@ _This project is based on the AddressBook-Level3 project created by the [SE-EDU 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -66,6 +67,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
+
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2425S1-CS2103-F11-2/tp/blob/master/src/main/java/tutorease/address/ui/Ui.java)
@@ -82,6 +85,8 @@ The `UI` component,
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` and `Lesson` object residing in the `Model`.
+
+<div style="page-break-after: always;"></div>
 
 ### Logic component
 
@@ -123,10 +128,10 @@ How the parsing works:
 Extra Pointers about parsing:
 
 * For basic one-word commands like `help`, `exit`, and `clear`, they are handled directly within the `parseCommand` function in `TutorEaseParser` without the need for a dedicated parser.
-These simple commands are omitted in the Parser classes diagram to enhance clarity and reduce clutter.
-* Various contact and lesson command parsers are represented as `XYZContactCommandParser` and `XYZLessonCommandParser`, respectively. 
-However, their behaviour varies slightly depending on the function. For example, `ArgumentMultimap` is used exclusively in parsers for add, delete, and edit commands, 
-while `ArgumentTokenizer` is only used in parsers for add and edit commands. Not specifying every parser reduces clutter and conveys the high-level message concisely.
+  These simple commands are omitted in the Parser classes diagram to enhance clarity and reduce clutter.
+* Various contact and lesson command parsers are represented as `XYZContactCommandParser` and `XYZLessonCommandParser`, respectively.
+  However, their behaviour varies slightly depending on the function. For example, `ArgumentMultimap` is used exclusively in parsers for add, delete, and edit commands,
+  while `ArgumentTokenizer` is only used in parsers for add and edit commands. Not specifying every parser reduces clutter and conveys the high-level message concisely.
 
 ### Model component
 
@@ -150,6 +155,8 @@ The `Model` component,
 
 </box>
 
+<div style="page-break-after: always;"></div>
+
 ### Storage component
 
 **API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
@@ -167,6 +174,8 @@ The `Storage` component,
 Classes used by multiple components are in the `tutorease.address.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Implementation**
 
@@ -426,9 +435,9 @@ Priorities: MVP (must have), 2 (nice to have), 3 (unlikely to have)
       Use case resumes from Step 2.
 
 * **1b**. No contacts found matching the entered keyword.
-    * **1b1**. TutorEase displays a message: "No contacts found with the given keyword(s)."  
+    * **1b1**. TutorEase displays a message: "No contacts found with the given keyword(s)."
     * **1b2**. Tutor enters a new keyword or cancels the search.  
-      Use case resumes from Step 2 or ends if cancelled.  
+      Use case resumes from Step 2 or ends if cancelled.
 
 **Use Case: UC05 - Add lesson for student**  
 **MSS:**
@@ -541,13 +550,13 @@ Given below are instructions to test the app manually.
 1. Initial launch
 
     1. Download the jar file and copy into an empty folder
-   
+
     1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 1. Saving window preferences
 
     1. Resize the window to an optimum size. Move the window to a different location. Close the window.
-   
+
     1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
@@ -558,16 +567,16 @@ Given below are instructions to test the app manually.
 1. Deleting a person while all persons are being shown
 
     1. Prerequisites: List all persons using the `contact list` command. Multiple persons in the list.
-   
+
     1. Test case: `contact delete 1`<br>
        Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
-   
+
     1. Test case: `contact delete 0`<br>
        Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
-   
+
     1. Other incorrect delete commands to try: `contact delete`, `contact delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
-   
+
 1. _{ more test cases …​ }_
 
 ### Deleting a lesson
@@ -590,7 +599,7 @@ Given below are instructions to test the app manually.
 ### Saving data
 
 1. Dealing with missing/corrupted data files
-    
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+
+    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
